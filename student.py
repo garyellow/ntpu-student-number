@@ -60,13 +60,13 @@ while True:
 
     while True:
         if mode == '1':
-            number = input('請輸入學號\n>> ')
+            number = input('\n請輸入學號\n>> ')
 
             if not number.isdecimal():
-                print("請輸入數字!!!\n")
+                print("\n請輸入數字!!!\n")
                 continue
             if int(number) > 999999999 or int(number) < 99999999:
-                print("請輸入正確學號!!!\n")
+                print("\n請輸入正確學號!!!\n")
                 continue
 
             url = "http://lms.ntpu.edu.tw/portfolio/search.php?fmScope=2&fmKeyword=" + number
@@ -86,34 +86,34 @@ while True:
             break
 
         elif mode == '2':
-            year = input('請輸入入學年度\n>> ')
+            year = input('\n請輸入入學年度\n>> ')
 
             if not year.isdecimal():
-                print("請輸入數字!!!\n")
+                print("\n請輸入數字!!!\n")
                 continue
             if int(year) >= 2022:
-                print("你未來人???\n")
+                print("\n你未來人???\n")
                 continue
             if int(year) < 50:
-                print("你原始人???\n")
+                print("\n你原始人???\n")
                 continue
             if 110 < int(year) < 1911:
-                print("請輸入正確年分!!!\n")
+                print("\n請輸入正確年分!!!\n")
                 continue
             if int(year) >= 1911:
                 year = str(int(year) - 1911)
 
-            department = input('請輸入科系名稱或編號\n>> ')
+            department = input('\n請輸入科系名稱或編號\n>> ')
             if department.isdecimal():
                 if not 71 <= int(department) <= 87 and int(department) != 712 and int(department) != 714 and int(
                         department) != 716 and int(department) != 742 and int(department) != 744:
-                    print("請輸入正確科系編號!!!\n")
+                    print("\n請輸入正確科系編號!!!\n")
                     continue
                 elif int(department) == 71:
-                    print("法律系請輸入科系+組別編號!!!\n")
+                    print("\n法律系請輸入科系+組別編號!!!\n")
                     continue
                 elif int(department) == 74:
-                    print("社會系請輸入科系+組別編號!!!\n")
+                    print("\n社會系請輸入科系+組別編號!!!\n")
                     continue
 
                 DPM = '4' + "{:0>3d}".format(int(year)) + department
@@ -138,7 +138,7 @@ while True:
                         print('\n' + year + '學年度' + D[department] + '系共有' + str(i - 1) + '個學生\n')
                         break
 
-                    # time.sleep(random.uniform(0, 0.2))
+                    time.sleep(random.uniform(0, 0.2))
                 break
 
             else:
@@ -151,15 +151,15 @@ while True:
                 if d[department] == '71':
                     case = input('\n1.法學\n2.司法\n3.財法\n請確認您的組別\n>> ')
                     while case != '1' and case != '2' and case != '3':
-                        print("請輸入1、2或是3\n")
-                        case = input('1.法學\n2.司法\n3.財法\n請確認您的組別\n>> ')
+                        print("\n請輸入1、2或是3\n")
+                        case = input('\n1.法學\n2.司法\n3.財法\n請確認您的組別\n>> ')
                     DPM = "4" + "{:0>3d}".format(int(year)) + d[department] + str(int(case) * 2)
 
                 elif d[department] == '74':
                     case = input('\n1.社學\n2.社工\n請確認您的系別\n>> ')
                     while case != '1' and case != '2':
-                        print("請輸入1或2\n")
-                        case = input('1.法學\n2.司法\n請確認您的組別\n>> ')
+                        print("\n請輸入1或2\n")
+                        case = input('\n1.社學\n2.社工\n請確認您的系別\n>> ')
                     DPM = "4" + "{:0>3d}".format(int(year)) + d[department] + str(int(case) * 2)
 
                 else:
