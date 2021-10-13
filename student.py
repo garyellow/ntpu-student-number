@@ -188,7 +188,7 @@ while True:
                     time.sleep(random.uniform(0.1, 0.5))
                 break
         else:
-            print("請輸入1或2\n")
+            print("\n請輸入1或2\n")
             mode = input('1.查詢個人\n2.查詢全系\n請選擇查詢模式\n>> ')
 
     print('按Enter鍵重新查詢，其他鍵離開程式')
