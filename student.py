@@ -145,7 +145,7 @@ while True:
                 try:
                     d[department]
                 except KeyError:
-                    print("請輸入正確科系名稱(不須加「系」)")
+                    print("\n請輸入正確科系名稱(不須加「系」)")
                     continue
 
                 if d[department] == '71':
