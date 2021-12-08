@@ -55,8 +55,7 @@ while True:
     ua = UserAgent()
     header_seed = ua.random
     header = {'user-agent': header_seed}
-
-    f = open("record", "w")
+    f = open('save', 'w')
 
     mode = input('1.查詢個人\n2.查詢全系\n請選擇查詢模式\n>> ')
 
@@ -71,16 +70,16 @@ while True:
                 print("\n請輸入正確學號!!!\n")
                 continue
 
-            url = "http://lms.ntpu.edu.tw/" + number
+            url = "http://lms.ntpu.edu.tw/portfolio/search.php?fmScope=2&fmKeyword=" + number
             web = requests.get(url, headers=header)
             web.encoding = 'utf-8'
 
             html = BS4(web.text, 'html.parser')
-            name = html.find('div', {'class': 'infoPath'}).find('a')
+            name = html.find('div', {'class': 'bloglistTitle'})
 
             try:
                 print("\n" + number + " " + name.text + "\n\n")
-                print(number + " " + name.text, f)
+                f.write(str(number + " " + name.text))
             except AttributeError:
                 print('\n學號' + number + '不存在')
                 print('請重新輸入學號\n')
@@ -128,16 +127,16 @@ while True:
                     else:
                         student_number = DPM + "{:0>2d}".format(i)
 
-                    URL = "http://lms.ntpu.edu.tw/" + student_number
+                    URL = "http://lms.ntpu.edu.tw/portfolio/search.php?fmScope=2&fmKeyword=" + student_number
                     web = requests.get(URL, headers=header)
                     web.encoding = 'utf-8'
 
                     html = BS4(web.text, 'html.parser')
-                    name = html.find('div', {'class': 'infoPath'}).find('a')
+                    name = html.find('div', {'class': 'bloglistTitle'})
 
                     try:
                         print(student_number + " " + name.text)
-                        print(student_number + " " + name.text, f)
+                        f.write(str(student_number + " " + name.text))
                     except AttributeError:
                         print('\n' + year + '學年度' + D[department] + '系共有' + str(i - 1) + '個學生\n')
                         break
@@ -176,21 +175,21 @@ while True:
                     else:
                         student_number = DPM + "{:0>2d}".format(i)
 
-                    URL = "http://lms.ntpu.edu.tw/" + student_number
+                    URL = "http://lms.ntpu.edu.tw/portfolio/search.php?fmScope=2&fmKeyword=" + student_number
                     web = requests.get(URL, headers=header)
                     web.encoding = 'utf-8'
 
                     html = BS4(web.text, 'html.parser')
-                    name = html.find('div', {'class': 'infoPath'}).find('a')
+                    name = html.find('div', {'class': 'bloglistTitle'})
 
                     try:
                         print(student_number + " " + name.text)
-                        print(student_number + " " + name.text, f)
+                        f.write(str(student_number + " " + name.text))
                     except AttributeError:
                         print('\n' + year + '學年度' + department + '系共有' + str(i - 1) + '個學生\n')
                         break
 
-                    time.sleep(random.uniform(0, 0.2))
+                    time.sleep(random.uniform(0.1, 0.5))
                 break
         else:
             print("\n請輸入1或2\n")
