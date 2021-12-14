@@ -170,6 +170,9 @@ while True:
 
                 print()
                 for i in range(1, 999):
+                    if i == 60:
+                        i = 1
+
                     if int(d[department]) <= 99 and int(d[department]) != 71 and int(d[department]) != 74:
                         student_number = DPM + "{:0>3d}".format(i)
                     else:
@@ -189,7 +192,7 @@ while True:
                         print('\n' + year + '學年度' + department + '系共有' + str(i - 1) + '個學生\n')
                         break
 
-                    time.sleep(random.uniform(0.1, 0.5))
+                    # time.sleep(random.uniform(0.1, 0.5))
                 break
         else:
             print("\n請輸入1或2\n")
