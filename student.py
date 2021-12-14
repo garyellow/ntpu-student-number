@@ -192,7 +192,7 @@ while True:
                         print('\n' + year + '學年度' + department + '系共有' + str(i - 1) + '個學生\n')
                         break
 
-                    # time.sleep(random.uniform(0.1, 0.5))
+                    time.sleep(random.uniform(0, 0.2))
                 break
         else:
             print("\n請輸入1或2\n")
