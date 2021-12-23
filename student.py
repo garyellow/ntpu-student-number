@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup as BS4
 from fake_useragent import UserAgent
 
+
 d = {
     '法律': '71', '法學': '712', '司法': '714', '財法': '716',
     '公行': '72',
@@ -55,7 +56,7 @@ while True:
     ua = UserAgent()
     header_seed = ua.random
     header = {'user-agent': header_seed}
-    f = open('save', 'w')
+    f = open('save', 'w', encoding = 'utf-8')
 
     mode = input('1.查詢個人\n2.查詢全系\n請選擇查詢模式\n>> ')
 
@@ -197,6 +198,8 @@ while True:
         else:
             print("\n請輸入1或2\n")
             mode = input('1.查詢個人\n2.查詢全系\n請選擇查詢模式\n>> ')
+
+    f.close()
 
     print('按Enter鍵重新查詢，其他鍵離開程式')
     if ord(msvcrt.getch()) != 13:
