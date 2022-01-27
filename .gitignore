@@ -1,4 +1,4 @@
 *.ini
 /__pycache__
 /build
-/Linebot/Linebot/settings.py
+*/settings.py

@@ -55,7 +55,7 @@ while True:
     ua = UserAgent()
     header_seed = ua.random
     header = {'user-agent': header_seed}
-    f = open('save', 'w', encoding='utf-8')
+    f = open('save.txt', 'w', encoding='utf-8')
 
     mode = input('1.查詢個人\n2.查詢全系\n請選擇查詢模式\n>> ')
 
