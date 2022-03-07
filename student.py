@@ -170,9 +170,6 @@ while True:
 
                 print()
                 for i in range(1, 999):
-                    if i == 60:
-                        i = 1
-
                     if int(d[department]) <= 99 and int(d[department]) != 71 and int(d[department]) != 74:
                         student_number = DPM + '{:0>3d}'.format(i)
                     else:
