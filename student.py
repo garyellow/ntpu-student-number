@@ -4,7 +4,7 @@ import time
 
 import requests
 from bs4 import BeautifulSoup as BS4
-from fake_useragent import UserAgent 
+from fake_useragent import UserAgent
 
 d = {
     '法律': '71', '法學': '712', '司法': '714', '財法': '716',
