@@ -2,6 +2,7 @@
 /Line_bot
 /__pycache__
 /build
+*/student
 */settings.py
 *.txt
 *.spec
