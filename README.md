@@ -6,7 +6,7 @@
 只能查詢到
 * [國立臺北大學](https://new.ntpu.edu.tw/)的學生
 * 日間部的學生
-* 95學年度入學的學生
+* 95學年度後入學的學生
 ## 使用方法
 1. 使用執行檔查詢 (方便快速)
     1. 從[release頁面](https://github.com/garyellow/student_number/releases)下載student.exe
